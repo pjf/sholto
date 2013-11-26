@@ -16,6 +16,42 @@ Version 0.01
 
 our $VERSION = '0.01';
 
+=head2 run
+
+    Sholto->run('IMPORT', debug => 1 );
+
+=cut
+
+use constant SUCCESS => 1;
+use constant FAIL    => 0;
+
+sub run {
+    my ($class, $tag, %options) = @_; 
+
+    if ($tag eq 'IMPORT') {
+        return SUCCESS;
+    }
+
+    foreach my $row (...) {
+        $row->{length} = $class->feet2metres( $row->{length} );
+    }
+
+    return FAIL;
+}
+
+=head2 feet2metres
+
+    my $metres = Sholto->feet2metres( $feet );
+
+Blah blah blah.
+
+=cut
+
+sub feet2metres {
+    my ($class, $feet) = @_;
+
+    return $feet * 0.3048;
+}
 
 =head1 SYNOPSIS
 
